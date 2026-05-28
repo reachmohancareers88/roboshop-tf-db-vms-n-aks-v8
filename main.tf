@@ -16,7 +16,10 @@ module "db" {
 module "aks" {
   source = "./modules/aks"
   env    = var.env
+  subnet_id = var.subnet_id
+
   rg_name     = data.azurerm_resource_group.main.name
   rg_location = data.azurerm_resource_group.main.location
 
 }
+
