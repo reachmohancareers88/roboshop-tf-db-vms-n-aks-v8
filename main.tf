@@ -1,16 +1,16 @@
-# module "db" {
-#   source = "./modules/vm"
-#
-#   for_each       = var.db
-#   component_name = each.key
-#   vm_size        = try(each.value["vm_size"], "Standard_B1s")
-#
-#   rgname    = var.rgname
-#   image_id  = var.image_id
-#   env       = var.env
-#   subnet_id = var.subnet_id
-#   vm_count  = 1
-# }
+module "db" {
+  source = "./modules/vm"
+
+  for_each       = var.db
+  component_name = each.key
+  vm_size        = try(each.value["vm_size"], "Standard_B1s")
+
+  rgname    = var.rgname
+  image_id  = var.image_id
+  env       = var.env
+  subnet_id = var.subnet_id
+  vm_count  = 1
+}
 
 
 module "aks" {
