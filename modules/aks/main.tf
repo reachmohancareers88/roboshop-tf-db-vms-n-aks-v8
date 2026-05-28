@@ -30,3 +30,6 @@ resource "azurerm_role_assignment" "registry" {
   skip_service_principal_aad_check = true
 }
 
+# Use this command to get the kubeconfig
+# az aks get-credentials --resource-group denmark-east-rg --name roboshop-dev
+
