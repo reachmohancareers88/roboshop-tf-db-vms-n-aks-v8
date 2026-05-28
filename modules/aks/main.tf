@@ -1,4 +1,4 @@
-resource "azurerm_kubernetes_cluster" "example" {
+resource "azurerm_kubernetes_cluster" "main" {
   name                = "roboshop-${var.env}"
   location            = var.rg_location
   resource_group_name = var.rg_name
