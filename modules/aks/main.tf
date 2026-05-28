@@ -14,6 +14,10 @@ resource "azurerm_kubernetes_cluster" "example" {
   identity {
     type = "SystemAssigned"
   }
+
+  bootstrap_profile {
+    container_registry_id = "/subscriptions/3f2e42e1-ca06-4a99-8c56-be8d8ba306db/resourceGroups/denmark-east-rg/providers/Microsoft.ContainerRegistry/registries/raghudevopsb89"
+  }
 }
 
 
