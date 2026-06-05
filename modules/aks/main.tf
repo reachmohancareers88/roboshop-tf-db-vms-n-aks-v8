@@ -38,3 +38,10 @@ resource "azurerm_role_assignment" "registry" {
 # Use this command to get the kubeconfig
 # az aks get-credentials --resource-group denmark-east-rg --name roboshop-dev
 
+resource "azurerm_kubernetes_cluster_node_pool" "pool1" {
+  name                  = "pool1"
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.main.id
+  vm_size               = "Standard_D2s_v3"
+  node_count            = 2
+}
+
