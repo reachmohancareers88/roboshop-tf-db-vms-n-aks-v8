@@ -18,8 +18,8 @@ resource "azurerm_linux_virtual_machine" "main" {
   resource_group_name             = data.azurerm_resource_group.main.name
   network_interface_ids           = [azurerm_network_interface.main[count.index].id]
   size                            = var.vm_size
-  admin_password                  = "DevOps@123456"
-  admin_username                  = "devops"
+  admin_password                  = "Devops@123456"
+  admin_username                  = "Devops"
   source_image_id                 = var.image_id
   disable_password_authentication = false
   secure_boot_enabled             = true
@@ -38,9 +38,8 @@ resource "azurerm_linux_virtual_machine" "main" {
 
 resource "azurerm_dns_a_record" "main" {
   name                = "${var.component_name}-${var.env}"
-  zone_name           = "rdevopsb89.online"
+  zone_name           = "drmohanlearning.online"
   resource_group_name = data.azurerm_resource_group.main.name
   ttl                 = 30
   records             = [azurerm_network_interface.main[0].private_ip_address]
 }
-
