@@ -29,7 +29,7 @@ resource "azurerm_kubernetes_cluster" "main" {
 resource "azurerm_role_assignment" "registry" {
   principal_id                     = azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id
   role_definition_name             = "AcrPull"
-  scope                            = "/subscriptions/cde5241e-289a-449b-b2b7-4efcf2d5c83c/resourceGroups/denmark-east-rg/providers/Microsoft.ContainerRegistry/registries/raghudevopsb89"
+  scope                            = "/subscriptions/cde5241e-289a-449b-b2b7-4efcf2d5c83c/resourceGroups/denmark-east-rg/providers/Microsoft.ContainerRegistry/registries/mohanacr89"
   skip_service_principal_aad_check = true
 }
 
