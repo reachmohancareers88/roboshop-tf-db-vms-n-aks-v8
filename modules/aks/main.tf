@@ -24,14 +24,12 @@ resource "azurerm_kubernetes_cluster" "main" {
   lifecycle {
     ignore_changes = [default_node_pool]
   }
-
 }
-
 
 resource "azurerm_role_assignment" "registry" {
   principal_id                     = azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id
   role_definition_name             = "AcrPull"
-  scope                            = "/subscriptions/3f2e42e1-ca06-4a99-8c56-be8d8ba306db/resourceGroups/denmark-east-rg/providers/Microsoft.ContainerRegistry/registries/raghudevopsb89"
+  scope                            = "/subscriptions/cde5241e-289a-449b-b2b7-4efcf2d5c83c/resourceGroups/denmark-east-rg/providers/Microsoft.ContainerRegistry/registries/raghudevopsb89"
   skip_service_principal_aad_check = true
 }
 
@@ -44,4 +42,3 @@ resource "azurerm_kubernetes_cluster_node_pool" "pool1" {
   vm_size               = "Standard_D2s_v3"
   node_count            = 2
 }
-
